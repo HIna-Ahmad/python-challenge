@@ -17,10 +17,10 @@ curr_profit = 0
 prev_profit = 0
 sum_changes = 0
 
-dirname = os.path.dirname(__file__)
-budget_data = os.path.join(dirname, "budget_data.csv")
+#dirname = os.path.dirname(__file__)
+#budget_data = os.path.join(dirname, "budget_data.csv")
 
-with open (budget_data) as data:
+with open ("../PyBank/Resources/budget_data.csv") as data:
     data = csv.reader(data)
     csvheader = next(data)
   
@@ -69,9 +69,9 @@ print(f"Greatest Increase in Profit: {max_date} (${max_profit})")
 print(f"Greatest Decrease in Profit: {min_date} (${min_profit})")
 
 
-#/Users/hinaahmad/Desktop/python-challenge repo/python-challenge/PyBank/analysis/analysis.txt
-filepathtosave = ("/Users/hinaahmad/Desktop/python-challenge repo/python-challenge/PyBank/analysis/analysis.txt")
-with open(filepathtosave, 'w') as text:
+
+filepathtosave = ("python-challenge/PyBank/analysis/analysis.txt")
+with open(filepathtosave, 'w', newline="") as text:
     text.write("Financial Analysis\n")
     text.write("-------------------------------------------\n")
     text.write(f"Total Months: {str(total_months)}\n")

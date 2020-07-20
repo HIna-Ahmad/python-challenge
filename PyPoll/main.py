@@ -10,8 +10,7 @@
 import os
 import csv
 
-dirname = os.path.dirname(__file__)
-poll_csv = os.path.join(dirname, "election_data.csv")
+
 
 
 ballot_ct = 0
@@ -20,7 +19,7 @@ candidate_count = {}
 candidate_emptylist = [] 
 
 
-with open(poll_csv) as data:
+with open("python-challenge/PyPoll/Resources/election_data.csv") as data:
     data = csv.reader(data)
     csvheader = next(data)
 
@@ -59,3 +58,15 @@ for name in candidate_count:
 print("--------------------")
 print(f"Winner: {khan}")
 print("--------------------")
+
+
+filepathtosave = ("python-challenge/PyPoll/analysis/analysis.txt")
+with open(filepathtosave, 'w', newline="") as text:
+    text.write("Election Results\n")
+    text.write("--------------------\n")
+    text.write(f"Total Votes: {ballot_ct}\n")
+    text.write(f"--------------------\n")
+    text.write(f"{name}: {candidate_info[name]}%  {candidate_count[name]}\n")
+    text.write(f"--------------------\n")
+    text.write(f"Winner: {khan}\n")
+    text.write(f"--------------------\n")
