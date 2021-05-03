@@ -10,14 +10,10 @@
 import os
 import csv
 
-
-
-
 ballot_ct = 0
 candidate_info = {}
 candidate_count = {}
 candidate_emptylist = [] 
-
 
 with open("python-challenge/PyPoll/Resources/election_data.csv") as data:
     data = csv.reader(data)
